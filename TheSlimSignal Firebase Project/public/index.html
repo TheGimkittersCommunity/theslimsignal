@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>The Slim Signal</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+        <link rel="stylesheet" href="/site-styles/main.css">
+    </head>
+
+    <body>
+        <header id="global-header"></header>
+
+        <div class="layout">
+
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h2>Tools</h2>
+                    <div class="btn-list">
+                        <button class="btn-card" id="auth-btn">Log In / Sign Up</button>
+                        <button class="btn-card" id="profile-btn" style="display: none;">Your Profile</button>
+                        <button class="btn-card" id="newTopic-btn" style="display: none;">Create New Topic</button>
+                        <button class="btn-card" id="newPost-btn" style="display: none;">Create New Reply</button>
+                        <button class="btn-card" id="signout-btn" style="display: none;">Sign Out</button>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2 class="m1rem">Categories</h2>
+                    <div class="btn-list" id="category-list"></div>
+                </div>
+
+                <div class="sidebar-section hidden">
+                        <h2>Tags</h2>
+                </div>
+            </aside>
+
+            <div class="scroll-area">
+                <main>
+
+                    <!-- js writes the content in "topic-list" -->
+                    <div class="content-area posts-container" id="topic-list"></div>
+                </main>
+            </div>
+        </div>
+
+
+        <dialog id="authContainer">
+            <div class="auth-box">
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form">
+                    <h2>Log In</h2>
+                    <input type="text" id="login-identifier" placeholder="Email or Username" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <button type="submit">Log In</button>
+                    <p class="auth-toggle">Don't have an account? <a href="#" id="toggle-to-signup">Sign Up</a></p>
+                    <button type="button" id="close-auth-btn" class="auth-close">Close</button>
+                </form>
+
+                <!-- Signup Form -->
+                <form id="signup-form" class="auth-form hidden">
+                    <h2>Create an Account</h2>
+                    <input type="email" id="signup-email" placeholder="Email" required>
+                    <input type="text" id="signup-username" placeholder="Username" required>
+                    <input type="password" id="signup-password" placeholder="Password" required>
+                    <button type="submit">Sign Up</button>
+                    <p class="auth-toggle">Already have an account? <a href="#" id="toggle-to-login">Log In</a></p>
+                    <button type="button" id="close-auth-btn2" class="auth-close">Close</button>
+                </form>
+            </div>
+        </dialog>
+
+        <dialog id="newTopicContainer">
+            <form id="newTopicForm">
+                <h3>Create a New Topic</h3>
+                
+                <input type="text" id="topicTitle" name="title" placeholder="Give your topic a name..." required>
+
+                <div class="newTopicChildContainer">
+                    <select id="topicCategory" name="category" required>
+                        <option value="" disabled selected>Select a category</option>
+                    </select>
+
+                    <select id="topicTags" name="tags">
+                        <option value="" disabled selected>Tags (optional)</option>
+                    </select>
+                </div>
+
+                <textarea id="topicContent" name="content" rows="8" placeholder="Start typing here. HTML, BBCode, and Markdown is currently not supported." required></textarea>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <button type="submit" data-sitekey="6Lc74X4sAAAAAMkVH7bCruy1tbFksW-5a1_nBXBa" class="newTopicButton" id="submitTopic-btn">Post Topic</button>
+                    <button type="button" class="newTopicButton" id="cancelTopic-btn">Cancel</button>
+                </div>
+            </form>
+        </dialog>
+
+        <dialog id="newPostContainer">
+            <form id="newPostForm">
+                <h3>Create a New Reply</h3>
+                
+                <input type="text" id="topicId" name="Id" placeholder="Paste the topic ID here..." required>                </div>
+
+                <textarea id="postContent" name="content" rows="8" placeholder="Start typing here. HTML, BBCode, and Markdown is currently not supported." required></textarea>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <button type="submit" data-sitekey="6Lc74X4sAAAAAMkVH7bCruy1tbFksW-5a1_nBXBa" class="newPostButton" id="submitPost-btn">Post Reply</button>
+                    <button type="button" class="newPostButton" id="cancelPost-btn">Cancel</button>
+                </div>
+            </form>
+        </dialog>
+        <script src="https://www.google.com/recaptcha/api.js?render=6Ldqh6MsAAAAAJ-eiBbGiw8eWylwFajvUA0fP3XN"></script>
+        <script src="/scripts/components.js"></script>
+        <script type="module" src="/scripts/firebaseConfig.js"></script>
+        <script type="module" src="/scripts/authService.js"></script>
+        <script type="module" src="/scripts/authUI.js"></script>
+        <script type="module" src="/scripts/resources.js"></script>
+        <script type="module" src="/scripts/newTopic.js"></script>
+        <script type="module" src="/scripts/newPost.js"></script>
+    </body>
+</html>

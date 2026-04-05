@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>The Slim Signal</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+        <link rel="stylesheet" href="/site-styles/main.css">
+    </head>
+
+    <body>
+        <header id="global-header"></header>
+
+        <div class="layout">
+
+            <aside class="sidebar">
+
+                <div class="sidebar-section">
+                    <h2>Tools</h2>
+                    <div class="btn-list">
+                        <button class="btn-card" id="profile-btn">
+                            <p>Your Profile</p>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2>Categories</h2>
+                    <div class="btn-list" id="category-list"></div>
+                </div>
+
+                <div class="sidebar-section">
+                        <h2>Tags</h2>
+                </div>
+
+            </aside>
+
+            <div class="scroll-area">
+                <main>
+                    <div class="page-title">
+
+                        <h1>Privacy Policy</h1>
+                        <br>
+                    </div>
+                    <div class="content-area" id="topic-list">
+                        <p><strong>Effective Date:</strong> 2/24/2026</p>
+                        <br>
+                        <p><strong>Last Updated:</strong> 2/24/2026</p>
+                        <br>
+                        <p>Your privacy is important to us. This policy explains what information we collect, how we use it, and your rights regarding your data.</p>
+
+                        <br>
+                        <br>
+
+                        <h2>1. Information We Collect</h2>
+                        <p>We collect specific personal information to provide and maintain our forum services:</p>
+                        <br>
+                        <ul>
+                            <li><strong>Email Address:</strong> Required for account registration, security verification, and essential notifications.</li>
+                            <li><strong>Username and Nickname:</strong> Used to identify you on the forum and personalize your experience.</li>
+                            <li><strong>IP Address:</strong> Collected automatically when you access the forum for security purposes and to enforce site-wide bans.</li>
+                        </ul>
+                        <br>
+                        <h2>2. Cookies and Tracking Technologies</h2>
+                        <p>Our forum uses "cookies"—small text files stored on your device—to enhance your experience:</p>
+                        <br>
+                        <ul>
+                            <li><strong>Essential Cookies:</strong> Required for the forum to function (e.g., keeping you logged in).</li>
+                            <li><strong>Functionality Cookies:</strong> Used to remember your preferences, such as your display theme.</li>
+                            <li><strong>Analytics Cookies:</strong> Used to understand how visitors interact with our site.</li>
+                        </ul>
+                        <br>
+                        <h2>3. How We Use Your Information</h2>
+                        <p>Your data is processed for the following reasons:</p>
+                        <br>
+                        <ul>
+                            <li>To manage your account and provide community features.</li>
+                            <li>To maintain a safe environment by identifying and banning users who violate our terms (via IP tracking).</li>
+                            <li>To analyze performance and improve site functionality.</li>
+                        </ul>
+                        <br>
+                        <h2>4. Data Retention</h2>
+                        <p>We retain your personal information for as long as your account is active. System logs and IP addresses are stored for a limited period to prevent abuse and ensure security.</p>
+                        <br>
+                        <h2>5. Your Rights</h2>
+                        <p>Depending on your location (e.g., GDPR or CCPA), you may have the right to:</p>
+                        <br>
+                        <ul>
+                            <li>Access, correct, or request the deletion of your personal data.</li>
+                            <li>Object to the processing of your data.</li>
+                            <li>Withdraw consent for non-essential cookies via your browser settings or our consent banner.</li>
+                        </ul>
+                        <br>
+                        <h2>6. Contact Us</h2>
+                        <p>If you have any questions regarding this Privacy Policy, please contact us at:</p>
+                        <br>
+                        <p><strong>Email:</strong> slimartist625@gmail.com</p>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+        <script src="/scripts/components.js"></script>
+        <script src="/scripts/firebase-config.js"></script>
+        <script type="module" src="/scripts/load-categories.js"></script>
+    </body>
+</html>
